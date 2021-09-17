@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label "worker1"}
     
     stages { 
         stage('checkoutcode'){
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'compiling has started'
                 dir(''){
-                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven382/bin/mvn compile'
+                    sh '/home/jenkins/deployment/tools/hudson.tasks.Maven_MavenInstallation/maven360/bin/mvn compile'
 
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
                steps {
                     echo 'Testing has started'
                 dir(''){
-                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven382/bin/mvn test'
+                    sh '/home/jenkins/deployment/tools/hudson.tasks.Maven_MavenInstallation/maven360/bin/mvn test'
                 }
                }
                 }
@@ -31,7 +31,7 @@ pipeline {
                steps {
                     echo 'Pakcaging has started'
                 dir(''){
-                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven382/bin/mvn package'}
+                    sh '/home/jenkins/deployment/tools/hudson.tasks.Maven_MavenInstallation/maven360/bin/mvn package'}
 
                }
                 }
