@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'compiling has started'
                 dir(''){
-                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.8.2/bin/mvn compile'
+                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven382/bin/mvn compile'
 
                 }
             }
@@ -22,7 +22,7 @@ pipeline {
                steps {
                     echo 'Testing has started'
                 dir(''){
-                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.8.2/bin/mvn test'
+                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven382/bin/mvn test'
                 }
                }
                 }
@@ -31,7 +31,7 @@ pipeline {
                steps {
                     echo 'Pakcaging has started'
                 dir(''){
-                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven-3.8.2/bin/mvn package'}
+                    sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven382/bin/mvn package'}
 
                }
                 }
